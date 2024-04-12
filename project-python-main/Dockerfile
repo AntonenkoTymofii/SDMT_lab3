@@ -1,10 +1,13 @@
 FROM python:3.9
 
-WORKDIR /home/project-python
-#COPY requirements/backend.in /requirements/.
+WORKDIR /home/project-python/requirements
+COPY requirements/backend.in .
 
-COPY . .
+RUN pip install --no-cache-dir -r backend.in
 
-RUN pip install --no-cache-dir -r ./requirements/backend.in
+WORKDIR /home/project-python/app
+
+COPY ./app .
+
 
 #CMD ["python", "spaceship/app.py"]
