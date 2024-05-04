@@ -1,15 +1,9 @@
-import os
-
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
-import sys
-print(sys.path)
-print(os.path)
 
-from app.spaceship.config import Settings
-from app.spaceship.routers import api, health
-
+from spaceship.config import Settings
+from spaceship.routers import api, health
 
 
 def make_app(settings: Settings) -> FastAPI:

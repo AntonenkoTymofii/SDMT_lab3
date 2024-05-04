@@ -1,4 +1,0 @@
-docker build -t lab3-python .
- docker run -d lab3-python
- docker ps
- docker exec -it <id cont> bash
