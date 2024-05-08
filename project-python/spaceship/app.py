@@ -28,7 +28,7 @@ def make_app(settings: Settings) -> FastAPI:
         return 'build/index.html'
 
     @app.get('/matrix/', response_model=Dict[str, List[List[float]]])
-    async def multiply_matrices_endpoint(rows1: int = 3, cols1: int = 3, rows2: int = 3, cols2: int = 3):
+    async def multiply_matrices_endpoint(rows1: int = 10, cols1: int = 10, rows2: int = 10, cols2: int = 10):
         matrix1 = np.random.rand(rows1, cols1)
         matrix2 = np.random.rand(rows2, cols2)
         result = np.dot(matrix1, matrix2)
