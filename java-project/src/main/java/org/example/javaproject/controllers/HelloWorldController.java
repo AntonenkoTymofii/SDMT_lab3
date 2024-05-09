@@ -5,14 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("")
+@RequestMapping()
 public class HelloWorldController {
-    @GetMapping(value = "",produces= "text/html")
+    @GetMapping("/")
     public String sayHello () {
-        return "<!DOCTYPE html>" +
-                "<html>" +
-                "\t<head><title>Hello world!</title></head>" +
-                "\t<body><h1>Hello world!</h1></body>" +
-                "</html>";
+        return "Hello World";
     }
 }
